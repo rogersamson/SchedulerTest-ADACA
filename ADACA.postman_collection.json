@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "e73596b9-c7f1-456e-88f5-1c04afcd6cf0",
+		"name": "ADACA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13315911"
+	},
+	"item": [
+		{
+			"name": "Create Session",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"test\",\n    \"priority\": 1,\n    \"startTime\" : \"2025-10-16 07:00:00\",\n    \"endTime\" : \"2025-10-16 07:30:00\",\n    \"speaker\" :  \"Roger\",\n    \"vip\" : 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/create-session",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"create-session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Sesssions By VIP",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"Test\",\n    \"priority\": 1,\n    \"startTime\" : \"2025-10-16 06:00:00\",\n    \"speaker\" : {\n        \"name\" : \"Roger\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/fetch-sessions/sort-by-vip?startDateTime=2025-10-11 00:00:00&endDateTime=2025-10-20 00:00:00",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fetch-sessions",
+						"sort-by-vip"
+					],
+					"query": [
+						{
+							"key": "startDateTime",
+							"value": "2025-10-11 00:00:00"
+						},
+						{
+							"key": "endDateTime",
+							"value": "2025-10-20 00:00:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Sesssions By PRIORITY",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"Test\",\n    \"priority\": 1,\n    \"startTime\" : \"2025-10-16 06:00:00\",\n    \"speaker\" : {\n        \"name\" : \"Roger\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/fetch-sessions/sort-by-priority?startDateTime=2025-10-11 00:00:00&endDateTime=2025-10-20 00:00:00",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fetch-sessions",
+						"sort-by-priority"
+					],
+					"query": [
+						{
+							"key": "startDateTime",
+							"value": "2025-10-11 00:00:00"
+						},
+						{
+							"key": "endDateTime",
+							"value": "2025-10-20 00:00:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Sesssions By Time",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"Test\",\n    \"priority\": 1,\n    \"startTime\" : \"2025-10-16 06:00:00\",\n    \"speaker\" : {\n        \"name\" : \"Roger\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/fetch-sessions/sort-by-time?startDateTime=2025-10-16 07:00:00&endDateTime=2025-10-16 08:00:00",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fetch-sessions",
+						"sort-by-time"
+					],
+					"query": [
+						{
+							"key": "startDateTime",
+							"value": "2025-10-16 07:00:00"
+						},
+						{
+							"key": "endDateTime",
+							"value": "2025-10-16 08:00:00"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
